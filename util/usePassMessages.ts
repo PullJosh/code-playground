@@ -5,7 +5,7 @@ export default function usePassMessages(
   funcs: { [name: string]: (data: any) => void } = {}
 ) {
   useEffect(() => {
-    const onMessage = ({ data: { name, data } }) => {
+    const onMessage = ({ data: { name, data } }: { data: any }) => {
       if (funcs[name]) {
         funcs[name](data);
       }
