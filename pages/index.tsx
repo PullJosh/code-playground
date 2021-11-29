@@ -36,9 +36,20 @@ export {};
 
 const defaultCode = `let i = 0;
 while (i < 10) {
-    console.log(i * i);
-    i++;
-}`;
+  console.log(i * i);
+  i++;
+}
+
+/*
+Click the "Run" button below to watch this code execute.
+- In the "console" tab, hover over a log to see which line of code
+  produced it and the state of the program when it was logged (on the right)
+- In the "timeline" tab, hover over a moment to see which line
+  of code was running and how it affected the state of the program (on the right)
+
+This demo is using a while loop because "for" loops are not quite as nicely
+inspectable yet. Don't worry; improvements will be made.
+*/`;
 
 type ValueReport = any;
 
