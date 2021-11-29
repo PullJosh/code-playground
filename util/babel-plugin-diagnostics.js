@@ -2,7 +2,7 @@ module.exports = function (babel) {
   const t = babel.types;
   return {
     visitor: {
-      Program(path) {
+      Program(path, state) {
         path.unshiftContainer(
           "body",
           t.importDeclaration(
@@ -20,7 +20,7 @@ module.exports = function (babel) {
                 t.identifier("__console")
               ),
             ],
-            t.stringLiteral("http://localhost:3000/__diagnostics.js")
+            t.stringLiteral(state.opts.diagnosticsURL)
           )
         );
       },

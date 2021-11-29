@@ -6,7 +6,15 @@ export default function PreviewFrame() {
   usePassMessages(global.parent, {
     runCode: async ({ code }: { code: string }) => {
       const { code: transformedCode } = transform(code, {
-        plugins: [babelPluginDiagnostics],
+        plugins: [
+          [
+            babelPluginDiagnostics,
+            {
+              diagnosticsURL: new URL("/__diagnostics.js", window.location.href)
+                .href,
+            },
+          ],
+        ],
         retainLines: true,
       });
 
