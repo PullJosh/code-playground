@@ -294,9 +294,9 @@ export default function Index() {
               editorRef.current = editor;
               monacoRef.current = monaco;
 
-              monaco.languages.typescript.javascriptDefaults.setCompilerOptions(
-                { noLib: true, allowNonTsExtensions: true }
-              );
+              // monaco.languages.typescript.javascriptDefaults.setCompilerOptions(
+              //   { noLib: true, allowNonTsExtensions: true }
+              // );
 
               monaco.languages.typescript.javascriptDefaults.addExtraLib(
                 d_ts,
